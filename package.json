@@ -4,7 +4,7 @@
   "description": "Get functions to compare two object properties given an operator.",
   "author": "Nicolas Gryman <ngryman@gmail.com> (http://ngryman.sh)",
   "license": "MIT",
-  "repository": "ngryman/compare-functions",
+  "repository": "ngryman/compare-properties",
   "files": [
     "license",
     "readme.md",
