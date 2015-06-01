@@ -1,4 +1,4 @@
-# compare-values [![Build Status](https://travis-ci.org/ngryman/compare-values.svg?branch=master)](https://travis-ci.org/ngryman/compare-values)
+# compare-properties [![Build Status](https://travis-ci.org/ngryman/compare-properties.svg?branch=master)](https://travis-ci.org/ngryman/compare-properties)
 
 > Get functions to compare two values given an operator.
 
@@ -6,22 +6,28 @@
 ## Install
 
 ```
-$ npm install —save compare-values
+$ npm install —save compare-properties
 ```
 
 
 ## Usage
 
 ```js
-var compareFactory = require(‘compare-values’);
+var compareFactory = require('compare-properties');
 
-var equal = compareFactory(‘=‘);
-equal(1, 1); //=> true
-equal(1, 2); //=> false
+var equal = compareFactory('=', 'foo');
+equal({ foo: 42 }, { foo: 42 }); //=> true
+equal({ foo: 42 }, { foo: 10 }); //=> false
+equal({ foo: 42 }, { bar: 42 }); //=> false
 
-var greaterThan = compareFactory(‘>’);
-greaterThan(2, 1); //=> true
-greaterThan(1, 2); //=> false
+var equal = compareFactory('=', 'foo', 'bar');
+equal({ foo: 42 }, { foo: 42 }); //=> false
+equal({ foo: 42 }, { bar: 42 }); //=> true
+
+var equal = compareFactory('<', 'foo');
+equal({ foo: 'foo' }, { foo: 'foo' }); //=> true
+equal({ foo: 'foo' }, { foo: 'fon' }); //=> true
+equal({ foo: 1337 }, { bar: 42 }); //=> false
 ```
 
 
