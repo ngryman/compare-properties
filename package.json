@@ -18,13 +18,13 @@
     "properties"
   ],
   "devDependencies": {
+    "eslint": "eslint/eslint",
+    "eslint-config-ngryman": "latest",
     "expect.js": "latest",
-    "jscs": "latest",
-    "jshint": "latest",
     "mocha": "latest"
   },
   "scripts": {
-    "lint": "jshint *.js; jscs *.js",
+    "lint": "eslint *.js",
     "test": "mocha --reporter spec test",
     "test:watch": "npm test -- --watch"
   }

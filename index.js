@@ -1,20 +1,20 @@
 'use strict'
 
-/** List of built-in operators. */
+/* List of built-in operators. */
 var operators = '= < > <= >= != %='.split(' ')
 
-/** Lookup table of compare functions. */
+/* Lookup table of compare functions. */
 var comparators = operators.reduce(function(res, operator) {
   var trueOperator = operator
 
-  if ('=' == operator) {
+  if ('=' === operator) {
     trueOperator = '==='
   }
-  else if ('!=' == operator) {
+  else if ('!=' === operator) {
     trueOperator = '!=='
   }
 
-  if ('%=' == operator) {
+  if ('%=' === operator) {
     res[operator] = function(a, b) { return (0 === a % b) }
   }
   else {
@@ -35,17 +35,18 @@ var comparators = operators.reduce(function(res, operator) {
 function compareFactory(operator, prop1, prop2) {
   var compare = comparators[operator]
 
-  if (null == prop2)
+  if (null == prop2) {
     prop2 = prop1
+  }
 
   return function(o1, o2) {
     return compare(o1[prop1], o2[prop2])
   }
 }
 
-/** Expose operators and comparators as factory properties. */
+/* Expose operators and comparators as factory properties. */
 compareFactory.operators = operators
 compareFactory.comparators = comparators
 
-/** Exports */
+/* Exports */
 module.exports = compareFactory

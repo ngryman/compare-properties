@@ -1,0 +1,12 @@
+{
+  "extends": "ngryman",
+
+  "env": {
+    "mocha": true,
+    "node": true
+  },
+
+  "rules": {
+    "no-new-func": 0
+  }
+}
