@@ -1,5 +1,7 @@
 # compare-properties [![npm][npm-image]][npm-url] [![travis][travis-image]][travis-url]
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ngryman/compare-properties.svg)](https://greenkeeper.io/)
+
 [npm-image]: https://img.shields.io/npm/v/compare-properties.svg?style=flat
 [npm-url]: https://npmjs.org/package/compare-properties
 [travis-image]: https://img.shields.io/travis/ngryman/compare-properties.svg?style=flat
